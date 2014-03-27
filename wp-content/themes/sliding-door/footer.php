@@ -9,36 +9,69 @@
  * @since Sliding Door 1.0
  */
 ?>
-	</div><!-- #main -->
+	    <div class="contact_mod row mb20" style="line-height: 62px">
+	        <div class="contact">
+	            <div class="pull_left" style="font-size: 24px;font-weight: bold">EXPLORE GATEWAY</div>
+	            <div style="float:right;margin-top: 20px">
+	                <span class="mr20"><i class="ico_tel"></i>1300 881 932</span>
+	                <i class="ico_facebook mr20"></i>
+	                <i class="ico_tiwwer mr20"></i>
+	            </div>
+	        </div>
+	    </div>
 
-	<div id="footer" role="contentinfo">
-		<div id="colophon">
+	    <div class="footer row" style="padding-bottom: 50px">
+	        <div class="pull_left site_map">
+	            <ul>
+	                <h3 class="title">Gateway</h3>
+	                <li><a href="javascript:void(0)">Home</a></li>
+	                <li><a href="javascript:void(0)">About Us</a></li>
+	                <li><a href="javascript:void(0)">Courses</a></li>
+	                <li><a href="javascript:void(0)">Careers</a></li>
+	                <li><a href="javascript:void(0)">Contact</a></li>
+	            </ul>
+	            <ul>
+	                <h3 class="title">Coures</h3>
+	                <li><a href="javascript:void(0)">Home</a></li>
+	                <li><a href="javascript:void(0)">About Us</a></li>
+	            </ul>
+	            <ul>
+	                <h3 class="title">Dounload</h3>
+	                <li><a href="javascript:void(0)">Home</a></li>
+	                <li><a href="javascript:void(0)">About Us</a></li>
+	            </ul>
+	            <ul>
+	                <h3 class="title">Blog</h3>
+	                <li><a href="javascript:void(0)">Home</a></li>
+	                <li><a href="javascript:void(0)">About Us</a></li>
+	                <li><a href="javascript:void(0)">Courses</a></li>
+	            </ul>
+	        </div>
+
+	        <div class="pull_right download">
+	            <img src="assets/img/download.PNG" alt="">
+	        </div>
+	    </div>
 
 
 
-			<div id="site-generator">
-			
-			<!-- If you'd like to support WordPress, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. -->
-			
-		<p>Powered by <a href="http://wordpress.org/">WordPress</a> and <a href="http://dubbo.org/slidingdoor/">Sliding Door</a> theme.</p>
-			</div><!-- #site-generator -->
+	</div>
+	
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ui.core.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ui.widget.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ui.tabs.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ui.accordion.min.js"></script>
+	<script type="text/javascript">
+	    $(function() {
 
-		</div><!-- #colophon -->
-	</div><!-- #footer -->
-
-</div><!-- #wrapper -->
-
-<?php
-	/* Always have wp_footer() just before the closing </body>
-	 * tag of your theme, or you will break many plugins, which
-	 * generally use this hook to reference JavaScript files.
-	 */
-
-	wp_footer();
-?>
-
-
-</body>
-</html>
+	        $( "#tabs" ).tabs();
+	        $( "#accordion2" ).accordion({
+	        });
+	    });
+	</script>
+	</body>
+	</html>
+	
 
 

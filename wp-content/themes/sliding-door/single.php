@@ -7,63 +7,87 @@
  */
 
 get_header(); ?>
-<?php get_sidebar(); ?>
+<?php the_post();?>
+    <!--banner-->
+    <div class="banner_mod row">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/banner_courses2.gif" alt="" height="162">
+    </div>
+    <!--content-->
+    <div class="content_mod row mb10">
+        <div class="p15">
+            <div class="left mb30">
 
-		<div id="container">
-			<div id="content" role="main">
+                <div class="nav_breadcrumb">
+					<?php echo the_breadcrumb();?>
+                </div>
+                <div class="course_detail mb30">
+                    <h2><?php echo the_title();?></h2>
+                    <p><?php the_content();?></p>
+                </div>
+                <!--tab开始-->
+                <div id="tabs">
+                    <ul>
+                        <li style="width: 234px"><a href="#tabs-1">Course Details</a></li>
+                        <li style="width: 234px"><a href="#tabs-2">Course Units</a></li>
+                        <li style="width: 236px;margin-right: 0"><a href="#tabs-3">Related Occupation</a></li>
+                    </ul>
 
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+                    <div id="tabs-1">
 
-				<div id="nav-above" class="navigation">
-					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'slidingdoor' ) . '</span> %title' ); ?></div>
-					<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'slidingdoor' ) . '</span>' ); ?></div>
-				</div><!-- #nav-above -->
+                        <div  class="ui-accordion ui-accordion-icons">
+                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Participant Eligibility</a></h3>
+                            <div class="ui-accordion-content" style="display: block">
+                                <?php the_field('course_detail_part_1')?>
+                            </div>
+                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Course Outcome</a></h3>
+                            <div class="ui-accordion-content" style="display: block">
+                                <?php the_field('course_detail_part_2')?>
+                            </div>
+                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Course Cost</a></h3>
+                            <div class="ui-accordion-content" style="display: block">
+                                <?php the_field('course_detail_part_3')?>
+                            </div>
+                        </div>
 
-				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<h1 class="entry-title"><?php the_title(); ?></h1>
 
-					<div class="entry-meta">
-						<?php slidingdoor_posted_on(); ?>
-					</div><!-- .entry-meta -->
+                    </div>
 
-					<div class="entry-content">
-						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'slidingdoor' ), 'after' => '</div>' ) ); ?>
-					</div><!-- .entry-content -->
+                    <div id="tabs-2">
 
-<?php if ( get_the_author_meta( 'description' ) ) : // If a user has filled out their description, show a bio on their entries  ?>
-					<div id="entry-author-info">
-						<div id="author-avatar">
-							<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'slidingdoor_author_bio_avatar_size', 60 ) ); ?>
-						</div><!-- #author-avatar -->
-						<div id="author-description">
-							<h2><?php printf( esc_attr__( 'About %s', 'slidingdoor' ), get_the_author() ); ?></h2>
-							<?php the_author_meta( 'description' ); ?>
-							<div id="author-link">
-								<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-									<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'slidingdoor' ), get_the_author() ); ?>
-								</a>
-							</div><!-- #author-link	-->
-						</div><!-- #author-description -->
-					</div><!-- #entry-author-info -->
-<?php endif; ?>
+                        <div  class="ui-accordion ui-accordion-icons">
+                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Core Units</a></h3>
+                            <div class="ui-accordion-content" style="display: block">
+                              <?php the_field('course_units')?>
+                            </div>
+                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Course Outcome</a></h3>
+                            <div class="ui-accordion-content" style="display: block">
+                               <?php the_field('course_outcome')?>
+                            </div>
+                        </div>
 
-					<div class="entry-utility">
-						<?php slidingdoor_posted_in(); ?>
-						<?php edit_post_link( __( 'Edit', 'slidingdoor' ), '<span class="edit-link">', '</span>' ); ?>
-					</div><!-- .entry-utility -->
-				</div><!-- #post-## -->
+                    </div>
 
-				<div id="nav-below" class="navigation">
-					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'slidingdoor' ) . '</span> %title' ); ?></div>
-					<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'slidingdoor' ) . '</span>' ); ?></div>
-				</div><!-- #nav-below -->
+                    <div id="tabs-3">
+                        <div class="tab_content p10">
+                            <?php the_field('course_occupations')?>
+                        </div>
+                    </div>
+                </div>
+                <!--tab结束-->
+            </div>
 
-				<?php comments_template( '', true ); ?>
+            <div class="right">
+				
+                <div class="side_menu">
+                    <h3>Courses Catagoeries</h3>
+                    <div id="accordion2" class="accordion_style01">
+						<?php gateway_wp_list_categories(array('title_li' => ''));?>
+                    </div>
+                </div>
+            </div>
 
-<?php endwhile; // end of the loop. ?>
-
-			</div><!-- #content -->
-		</div><!-- #container -->
+            <div class="row mb10"><a href="javascript:void(0)" class="btn_red"><span>Apply Now</span></a></div>
+        </div>
+    </div>
 
 <?php get_footer(); ?>
