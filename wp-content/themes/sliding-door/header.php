@@ -51,7 +51,7 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="<?php echo home_url('/');?>">Home</a></li>
                     <li class="active"><a href="<?php echo home_url('/categories');?>">Courses</a></li>
                     <li><a href="calendar.html">Calendar</a></li>
                     <li><a href="javascript:void(0)">Traineeships</a></li>

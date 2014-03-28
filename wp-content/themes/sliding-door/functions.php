@@ -43,6 +43,20 @@
  */
 require_once ( get_template_directory() . '/theme-options.php' );
 
+add_action( 'after_setup_theme', 'slidingdoor_setup' );
+
+if ( ! function_exists( 'slidingdoor_setup' ) ):
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * @since Sliding Door 1.0
+ */
+function slidingdoor_setup() {
+	// This theme uses post thumbnails
+	add_theme_support( 'post-thumbnails' );
+}
+
+endif;
 function gateway_get_categories($args = ''){
 	$defaults = array(
 		'show_option_all' => '', 'show_option_none' => __('No categories'),

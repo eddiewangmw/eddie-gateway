@@ -62,6 +62,10 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ui.widget.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ui.tabs.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ui.accordion.min.js"></script>
+	<?php if(is_home()):?>
+		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/slide.js"></script>
+		
+	<?php endif;?>
 	<script type="text/javascript">
 	    $(function() {
 			
@@ -78,6 +82,21 @@
 		          $( "#accordion2" ).accordion({
 		          });
 			
+			<?php endif;?>
+			
+			<?php if(is_home()):?>
+		    var ShowPre1 = new ShowPre({
+		        box:"banner_index",
+		        numIco:"index_numIco",
+		        loop:1,
+		        auto:1
+		    });
+		    var ShowPre2 = new ShowPre({
+		        box:"banner_index2",
+		        Pre:"banner_index_pre",
+		        Next:"banner_index_next",
+		        loop:1
+		    });
 			<?php endif;?>
 	    });
 	</script>
