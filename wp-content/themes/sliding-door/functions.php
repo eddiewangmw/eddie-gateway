@@ -43,7 +43,41 @@
  */
 require_once ( get_template_directory() . '/theme-options.php' );
 
+function gateway_get_categories($args = ''){
+	$defaults = array(
+		'show_option_all' => '', 'show_option_none' => __('No categories'),
+		'orderby' => 'name', 'order' => 'ASC',
+		'style' => 'list',
+		'show_count' => 0, 'hide_empty' => 1,
+		'use_desc_for_title' => 1, 'child_of' => 0,
+		'feed' => '', 'feed_type' => '',
+		'feed_image' => '', 'exclude' => '',
+		'exclude_tree' => '', 'current_category' => 0,
+		'hierarchical' => true, 'title_li' => __( 'Categories' ),
+		'echo' => 1, 'depth' => 0,
+		'taxonomy' => 'category'
+	);
 
+	$r = wp_parse_args( $args, $defaults );
+
+	if ( !isset( $r['pad_counts'] ) && $r['show_count'] && $r['hierarchical'] )
+		$r['pad_counts'] = true;
+
+	if ( true == $r['hierarchical'] ) {
+		$r['exclude_tree'] = $r['exclude'];
+		$r['exclude'] = '';
+	}
+
+	if ( !isset( $r['class'] ) )
+		$r['class'] = ( 'category' == $r['taxonomy'] ) ? 'categories' : $r['taxonomy'];
+
+	extract( $r );
+
+	if ( !taxonomy_exists($taxonomy) )
+		return false;
+
+	return	$categories = get_categories( $r );
+}
 
 function gateway_wp_list_categories( $args = '' ) {
 	$defaults = array(

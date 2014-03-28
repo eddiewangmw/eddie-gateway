@@ -76,15 +76,7 @@ get_header(); ?>
                 <!--tab结束-->
             </div>
 
-            <div class="right">
-				
-                <div class="side_menu">
-                    <h3>Courses Catagoeries</h3>
-                    <div id="accordion2" class="accordion_style01">
-						<?php gateway_wp_list_categories(array('title_li' => ''));?>
-                    </div>
-                </div>
-            </div>
+           <?php get_sidebar(); ?>
 
             <div class="row mb10"><a href="javascript:void(0)" class="btn_red"><span>Apply Now</span></a></div>
         </div>

@@ -64,14 +64,22 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ui.accordion.min.js"></script>
 	<script type="text/javascript">
 	    $(function() {
-
+			
+			<?php if(is_single()): ?>
+			
 	        $( "#tabs" ).tabs();
-	        $( "#accordion2" ).accordion({
-	        });
+	        $( "#accordion2" ).accordion({});
+			
+			<?php endif;?>
+			
+			<?php if(is_category()):?>
+		    $( "#accordion" ).accordion({
+		          });
+		          $( "#accordion2" ).accordion({
+		          });
+			
+			<?php endif;?>
 	    });
 	</script>
 	</body>
 	</html>
-	
-
-
