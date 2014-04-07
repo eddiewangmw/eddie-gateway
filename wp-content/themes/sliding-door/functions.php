@@ -55,6 +55,7 @@ function slidingdoor_setup() {
 	// This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
 }
+add_theme_support( 'menus' );
 
 endif;
 function gateway_get_categories($args = ''){
@@ -213,4 +214,103 @@ function the_breadcrumb() {
     elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
     elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
     echo '</ul>';
+}
+
+
+class Gateway_Footer_Walker_Nav_Menu extends Walker_Nav_Menu{
+	
+	function start_el(&$output, $item, $depth, $args)
+    {
+        $classes = empty ($item->classes) ? array() : (array)$item->classes;
+
+        $class_names = join(
+            ' '
+            , apply_filters(
+                'nav_menu_css_class'
+                , array_filter($classes), $item
+            )
+        );
+
+        !empty ($class_names)
+            and $class_names = ' class="' . esc_attr($class_names) . '"';
+
+        $output .= $item->menu_item_parent == 0 ? "<ul >" : "<li>";
+
+        $attributes = '';
+
+        !empty($item->attr_title)
+            and $attributes .= ' title="' . esc_attr($item->attr_title) . '"';
+        !empty($item->target)
+            and $attributes .= ' target="' . esc_attr($item->target) . '"';
+        !empty($item->xfn)
+            and $attributes .= ' rel="' . esc_attr($item->xfn) . '"';
+        !empty($item->url)
+            and $attributes .= ' href="' . esc_attr($item->url) . '"';
+        !empty($item->description)
+            and $attributes .= ' id="' . esc_attr($item->description) . '"';
+
+        // insert description for top level elements only
+        $description = '';
+
+        $title = apply_filters('the_title', $item->title, $item->ID);
+
+		$args = (object)$args;
+		if( $item->menu_item_parent == 0){
+	        $item_output = '<h3 class="title">'. $title. '</h3>';
+		}else{
+		    $item_output = $args->before
+		        . "<a $attributes>"
+		        . $args->link_before
+		        . $title
+		        . '</a> '
+		        . $args->link_after
+		        . $description
+		        . $args->after;
+		}
+        // Since $output is called by reference we don't need to return anything.
+        $output .= apply_filters(
+            'walker_nav_menu_start_el'
+            , $item_output
+            , $item
+            , $depth
+            , $args
+        );
+    }
+	
+
+	/**
+	 * Starts the list before the elements are added.
+	 *
+	 * @see Walker::start_lvl()
+	 *
+	 * @since 3.0.0
+	 *
+	 * @param string $output Passed by reference. Used to append additional content.
+	 * @param int    $depth  Depth of menu item. Used for padding.
+	 * @param array  $args   An array of arguments. @see wp_nav_menu()
+	 */
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent\n";
+	}
+
+	/**
+	 * Ends the list of after the elements are added.
+	 *
+	 * @see Walker::end_lvl()
+	 *
+	 * @since 3.0.0
+	 *
+	 * @param string $output Passed by reference. Used to append additional content.
+	 * @param int    $depth  Depth of menu item. Used for padding.
+	 * @param array  $args   An array of arguments. @see wp_nav_menu()
+	 */
+	function end_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "$indent\n";
+	}
+	
+	function end_el( &$output, $item, $depth = 0, $args = array() ) {
+		$output .= $item->menu_item_parent == 0 ? "</ul>\n" : "</li>\n";
+	}
 }

@@ -316,7 +316,7 @@ body {
     width: 200px;
 }
 
-.form .btn_submit {
+.form .btn_submit, form .btn_sending {
     display: block;
     height: 36px;
     line-height: 36px;
@@ -325,12 +325,12 @@ body {
     font-size: 16px;
     text-align: center;
     margin: 0 12px 0 12px;
-    cursor: pointer;
 }
 
 .btn_submit span {
     padding-right: 25px;
     background: url(../img/ico_arrow3.png) right center no-repeat;
+	cursor: pointer;
 }
 
 .form .btn_submit:hover {

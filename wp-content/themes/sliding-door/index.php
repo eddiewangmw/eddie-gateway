@@ -30,72 +30,52 @@ get_header(); ?>
 	    </div>
 	    <!--快捷链接-->
 	    <div class="link_mod row mb10">
+			<?php $posts = get_posts(array(
+				'post_type'		=> 'post',
+				'posts_per_page'	=> -1,
+				'meta_key'		=> 'recommend_in_home_page',
+				'meta_value'		=> 1
+			));
+			?>
+			<?php foreach($posts AS $post):?>
 	        <div class="grid_6">
-	            <a class="link active" href="javascript:void(0)">
-	                <span class="img"><img src="<?php echo get_template_directory_uri(); ?>/img/quick_menu_01.gif" alt=""></span>
-	                <span class="text">Certificate lll Guarantee<i class="ico_arrow"></i></span>
+	            <a class="link active" href="<?php echo get_permalink();?>">
+	                <span class="img"><?php the_post_thumbnail(array(240,197));?></span>
+	                <span class="text"><?php echo the_title();?><i class="ico_arrow"></i></span>
 	            </a>
 	        </div>
-	        <div class="grid_6">
-	            <a class="link" href="javascript:void(0)">
-	                <span class="img"><img src="<?php echo get_template_directory_uri(); ?>/img/quick_menu_02.gif" alt=""></span>
-	                <span class="text">Study Calendar<i class="ico_arrow"></i></span>
-	            </a>
-	        </div>
-	        <div class="grid_6">
-	            <a class="link" href="javascript:void(0)">
-	                <span class="img"><img src="<?php echo get_template_directory_uri(); ?>/img/quick_menu_03.gif" alt=""></span>
-	                <span class="text">Traineeships<i class="ico_arrow"></i></span>
-	            </a>
-	        </div>
-	        <div class="grid_6">
-	            <a class="link" href="javascript:void(0)">
-	                <span class="img"><img src="<?php echo get_template_directory_uri(); ?>/img/quick_menu_04.gif" alt=""></span>
-	                <span class="text">Student Handbook<i class="ico_arrow"></i></span>
-	            </a>
-	        </div>
+		<?php endforeach;?>
 	    </div>
 
 	    <div class="row" style="height: 520px;background: #fff">
 	        <div class="grid_18 ">
 
 	            <div class="row sub_title"></div>
-
-
-
 	            <div class="small_slide_mod" style="height:200px">
-
+					<?php $scroll_posts = get_posts(array(
+						'post_type'		=> 'post',
+						'posts_per_page'	=> -1,
+						'meta_key'		=> 'display_in_scroll_area',
+						'meta_value'		=> 1
+					));
+					?>
+					<?php if($scroll_posts):?>
 	                <div class="banner_index2">
 	                    <a href="javascript:void(0);" class="btn btnPre" id="banner_index_pre"></a>
 	                    <a href="javascript:void(0);" class="btn btnNext" id="banner_index_next"></a>
 	                    <ul class="banner_wrap" id="banner_index2">
+							<?php foreach($scroll_posts AS $post):?>
 	                        <li>
-	                            <a href="javascript:void(0)">
-	                                <span class="img"><img src="<?php echo get_template_directory_uri(); ?>/img/small_slide_01.gif" alt=""></span>
-	                                <span class="text">Certificate IV in  1<i class="ico_arrow"></i></span>
+	                            <a href="<?php echo get_permalink();?>">
+	                                <span class="img"><?php the_post_thumbnail(array(206,206));?></span>
+	                                <span class="text"><?php echo the_title();?><i class="ico_arrow"></i></span>
 	                            </a>
 	                        </li>
-	                        <li>
-	                            <a href="javascript:void(0)">
-	                                <span class="img"><img src="<?php echo get_template_directory_uri(); ?>/img/small_slide_01.gif" alt=""></span>
-	                                <span class="text">Certificate IV in  2<i class="ico_arrow"></i></span>
-	                            </a>
-	                        </li>
-	                        <li>
-	                            <a href="javascript:void(0)">
-	                                <span class="img"><img src="<?php echo get_template_directory_uri(); ?>/img/small_slide_01.gif" alt=""></span>
-	                                <span class="text">Certificate IV in  3<i class="ico_arrow"></i></span>
-	                            </a>
-	                        </li>
-	                        <li>
-	                            <a href="javascript:void(0)">
-	                                <span class="img"><img src="<?php echo get_template_directory_uri(); ?>/img/small_slide_01.gif" alt=""></span>
-	                                <span class="text">Certificate IV in  4<i class="ico_arrow"></i></span>
-	                            </a>
-	                        </li>
+							
+						<?php endforeach;?>
 	                    </ul>
 	                </div>
-
+				<?php endif;?>
 	            </div>
 
 	            <div class="quick_link_mod">
@@ -124,36 +104,37 @@ get_header(); ?>
 	        </div>
 
 	        <div class="grid_6">
-	            <form class="form" action="">
+				<form action="/contact-page/" method="post" class="form" novalidate="novalidate" id="home-form">
+					<input type="hidden" name="post-type" value="ajax">
 	                <div class="form_title">Course Enquires<img src="<?php echo get_template_directory_uri(); ?>/img/icon_chat.png" align="absmiddle" style="margin-left: 10px"></div>
 	                <div class="form_content">
-	                    <div class="form_cotroller">
-	                        <label>Name</label>
-	                        <input type="text">
-	                    </div>
-	                    <div class="form_cotroller">
-	                        <label>Email</label>
-	                        <input type="text">
-	                    </div>
-	                    <div class="form_cotroller">
-	                        <label>Mobile</label>
-	                        <input type="text">
-	                    </div>
-	                    <div class="form_cotroller">
-	                        <label>Course</label>
-	                        <select>
-	                            <option></option>
-	                            <option></option>
-	                        </select>
-	                    </div>
-	                    <div class="form_cotroller">
-	                        <label>Course</label>
-	                        <textarea rows="" cols="" style="height: 65px">
-
-	                        </textarea>
-	                    </div>
+                    <div class="form_cotroller">
+                        <label>Name</label>
+                        <input type="text" name="yourname" id="name">
+                    </div>
+                    <div class="form_cotroller">
+                        <label>Email</label>
+                        <input type="text" name="youremail" id="email">
+                    </div>
+                    <div class="form_cotroller">
+                        <label>Mobile</label>
+                        <input type="text" name="mobile" id="mobile">
+                    </div>
+                    <div class="form_cotroller">
+                        <label>Course</label>
+                        <select name="course">
+                            <option value="Courese A"> Course A</option>
+                            <option value="Courese B"> Course B</option>
+                        </select>
+                    </div>
+                    <div class="form_cotroller">
+                        <label>Message</label>
+                        <textarea name="yourmessage" style="height: 65px" id="message">
+                        </textarea>
+                    </div>	                   
 	                </div>
 	                <div><a class="btn_submit"><span>SEND TO US</span></a></div>
+					<div class="wpcf7-response-output wpcf7-display-none"></div>
 	            </form>
 	        </div>
 	    </div>

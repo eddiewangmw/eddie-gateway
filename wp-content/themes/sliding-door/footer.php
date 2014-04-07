@@ -21,35 +21,32 @@
 	    </div>
 
 	    <div class="footer row" style="padding-bottom: 50px">
-	        <div class="pull_left site_map">
-	            <ul>
-	                <h3 class="title">Gateway</h3>
-	                <li><a href="javascript:void(0)">Home</a></li>
-	                <li><a href="javascript:void(0)">About Us</a></li>
-	                <li><a href="javascript:void(0)">Courses</a></li>
-	                <li><a href="javascript:void(0)">Careers</a></li>
-	                <li><a href="javascript:void(0)">Contact</a></li>
-	            </ul>
-	            <ul>
-	                <h3 class="title">Coures</h3>
-	                <li><a href="javascript:void(0)">Home</a></li>
-	                <li><a href="javascript:void(0)">About Us</a></li>
-	            </ul>
-	            <ul>
-	                <h3 class="title">Dounload</h3>
-	                <li><a href="javascript:void(0)">Home</a></li>
-	                <li><a href="javascript:void(0)">About Us</a></li>
-	            </ul>
-	            <ul>
-	                <h3 class="title">Blog</h3>
-	                <li><a href="javascript:void(0)">Home</a></li>
-	                <li><a href="javascript:void(0)">About Us</a></li>
-	                <li><a href="javascript:void(0)">Courses</a></li>
-	            </ul>
-	        </div>
+			<?php
+			$defaults = array(
+				'theme_location'  => '',
+				'menu'            => '',
+				'container'       => 'div',
+				'container_class' => 'pull_left site_map',
+				'container_id'    => '',
+				'menu_class'      => '',
+				'menu_id'         => '',
+				'echo'            => true,
+				'fallback_cb'     => 'wp_page_menu',
+				'before'          => '',
+				'after'           => '',
+				'link_before'     => '',
+				'link_after'      => '',
+				'items_wrap'      => '<div>%3$s</div>',
+				'depth'           => 0,
+				'walker'          => new Gateway_Footer_Walker_Nav_Menu
+			);
+
+			wp_nav_menu( $defaults );
+				
+			?>
 
 	        <div class="pull_right download">
-	            <img src="assets/img/download.PNG" alt="">
+	            <img src="<?php echo get_template_directory_uri(); ?>/img/download.PNG" alt="">
 	        </div>
 	    </div>
 
@@ -85,6 +82,33 @@
 			<?php endif;?>
 			
 			<?php if(is_home()):?>
+			$("#home-form .btn_submit span").click(function (){
+				
+				var myReg = /^[-_A-Za-z0-9]+@([_A-Za-z0-9]+\.)+[A-Za-z0-9]{2,3}$/; 
+				var nameReg = /^[ ]+$/; 
+				
+				if( $("#name").val() == ""){
+					alert(' Name is empty!'); 
+					$("#name").focus();
+					return false;
+				}else if( nameReg.test($("#name").val()) ){
+					alert(' Name is empty!'); 
+					$("#name").focus();
+					return false;
+				}else if( ! myReg.test($('#email').val())){
+					alert(' Email is incorrect!'); 
+					$("#email").focus();
+					return false;
+				}else{
+					$("#home-form .btn_submit").removeClass('btn_submit').addClass('btn_sending');
+					$(this).html('Sending...');
+					$.post("/contact-page/",$("#home-form").serialize(), function(result){
+					   $("#home-form .btn_sending").removeClass('btn_sending').addClass('btn_submit');
+					   $(this).html('SEND TO US');
+					   alert('Your message had sent.');
+					  });
+				}
+			});
 		    var ShowPre1 = new ShowPre({
 		        box:"banner_index",
 		        numIco:"index_numIco",
@@ -100,5 +124,13 @@
 			<?php endif;?>
 	    });
 	</script>
+	<?php
+		
+
+    global $wpdb;
+    echo "<pre>";
+      print_r( $wpdb->queries );
+      echo "</pre>";
+	?>
 	</body>
 	</html>
