@@ -216,6 +216,24 @@ function the_breadcrumb() {
     echo '</ul>';
 }
 
+if ( ! function_exists( 'slidingdoor_posted_on' ) ) :
+function slidingdoor_posted_on() {
+	printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s', 'slidingdoor' ),
+		'meta-prep meta-prep-author',
+		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+			get_permalink(),
+			esc_attr( get_the_time() ),
+			get_the_date()
+		),
+		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
+			get_author_posts_url( get_the_author_meta( 'ID' ) ),
+			sprintf( esc_attr__( 'View all posts by %s', 'slidingdoor' ), get_the_author() ),
+			get_the_author()
+		)
+	);
+}
+endif;
+
 
 class Gateway_Footer_Walker_Nav_Menu extends Walker_Nav_Menu{
 	
@@ -314,3 +332,17 @@ class Gateway_Footer_Walker_Nav_Menu extends Walker_Nav_Menu{
 		$output .= $item->menu_item_parent == 0 ? "</ul>\n" : "</li>\n";
 	}
 }
+
+function dynamic_excerpt($length) {    
+global $post;   
+$text = $post->post_excerpt;   
+if ( '' == $text ) {   
+$text = get_the_content('');   
+$text = apply_filters('the_content', $text);   
+$text = str_replace(']]>', ']]>', $text);   
+}   
+$text = strip_shortcodes($text);    
+$text = strip_tags($text);    
+$text = mb_substr($text,0,$length).' ...';   
+echo $text;    
+}  

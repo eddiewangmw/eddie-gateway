@@ -23,8 +23,8 @@ get_header(); ?>
 	    </div>
 	    <!--搜索-->
 	    <div class="search_mod row mb10">
-	        <form action="" class="main_search">
-	            <input type="text" placeholder="what do you want to learn?">
+	        <form action="" class="main_search" id="search">
+	            <input type="text" placeholder="what do you want to learn?" name="s">
 	            <a href="javascript:void(0)" class="btn_search"></a>
 	        </form>
 	    </div>

@@ -27,12 +27,14 @@
                     <div>
 						<?php 
 						query_posts('cat='.$cat->term_id);
+						$i = 0;
 						while (have_posts()) : the_post();
+						$i++;
 						?>
-                        <div class="course_detail_mod">
+                        <div class="course_detail_mod" <?php echo (($i > 1) AND ($i%3 == 0)) ? 'style="margin-right: 0"' : '';?> >
                             <span><a href="<?php the_permalink(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/ex03.gif" alt=""></a></span>
                             <h3><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
-                            <p><?php the_content();?></p>
+                            <p><?php dynamic_excerpt(150);?></p>
                         </div>
                        <?php endwhile;?>
                     </div>

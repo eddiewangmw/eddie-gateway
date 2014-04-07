@@ -109,6 +109,9 @@
 					  });
 				}
 			});
+			$("#search .btn_search").click(function(){
+				$("#search").submit();
+			});
 		    var ShowPre1 = new ShowPre({
 		        box:"banner_index",
 		        numIco:"index_numIco",
