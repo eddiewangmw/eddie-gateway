@@ -128,12 +128,12 @@
 	    });
 	</script>
 	<?php
-		
-
-    global $wpdb;
-    echo "<pre>";
-      print_r( $wpdb->queries );
-      echo "</pre>";
+	if(WP_DEBUG ==  true){
+	    global $wpdb;
+	    echo "<pre>";
+	      print_r( $wpdb->queries );
+	      echo "</pre>";
+	  }
 	?>
 	</body>
 	</html>
