@@ -19,7 +19,7 @@ if($_REQUEST['del_id']){$del_res = $obj->delete_image($_REQUEST['del_id']);}
 		<tr <?php if($key%2 != 0){?>class="odd"<?php }?>>
 			<td valign="top" align="center"><?php echo $img->id;?></td>
 			<td valign="top" align="center">
-				<img src="<?php echo $up['baseurl'].'/wpslideshow/'.preg_replace('/(.*)(\.[\w\d]{3})/', '$1-thumb$2', $img->guid);?>" width="150" height="50"  />
+				<img src="<?php echo $up['baseurl'].'/wp-easy-slideshow/'.preg_replace('/(.*)(\.[\w\d]{3})/', '$1-thumb$2', $img->guid);?>" width="150" height="50"  />
 			</td>
 			<td><?php if($img->content){echo substr(strip_tags($img->content),0,200).'...';}?></td>
 			<td><?php echo $img->link;?></td>
