@@ -26,7 +26,7 @@ if(!empty($_POST['submit'])){
 					<tr><td><h3>Current Image</h3></td></tr>
 					<tr>
 						<td>
-							<img src="<?php echo $up['baseurl'].'/wpslideshow/'.preg_replace('/(.*)(\.[\w\d]{3})/', '$1-thumb$2', $res->guid);?>" width="150" height="50"  />
+							<img src="<?php echo $up['baseurl'].'/wp-easy-slideshow/'.preg_replace('/(.*)(\.[\w\d]{3})/', '$1-thumb$2', $res->guid);?>" width="150" height="50"  />
 						</td>
 					</tr>
 					<tr><td><h3>New Image</h3></td></tr>
