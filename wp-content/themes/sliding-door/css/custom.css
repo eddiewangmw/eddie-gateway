@@ -720,3 +720,4 @@ body {
 .indexBanner_num a.on, .indexBanner_num a:hover {
     background: #da2411;
 }
+.ui-accordion-content {color:#555;}
