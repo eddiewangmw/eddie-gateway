@@ -608,11 +608,13 @@ body {
     line-height: 20px;
     color: #555;
     margin: 10px 0;
+    word-break: break-all;
 }
 
 .ui-accordion-content .ico_kuai {
     padding-left: 15px;
     background: url(../img/ico_kuai.gif) no-repeat left center;
+    background-position: 0 5px;
 }
 
 .course_detail_mod {
@@ -820,6 +822,7 @@ body {
     top: 45px;
     left: -20px;
     text-indent: -999em;
+    z-index:9999;
     background: url(../img/icon_arrow_left.png) no-repeat;
 }
 
@@ -831,5 +834,6 @@ body {
     position: absolute;
     top: 45px;
     text-indent: -999em;
+    z-index:9999;
     background: url(../img/icon_arrow_right.png) no-repeat;
 }
