@@ -208,7 +208,7 @@ body {
 }
 
 .small_slide_mod {
-    padding: 30px 0 0 18px;
+    padding: 27px 0 0 18px;
 }
 
 .small_slide_mod a {
@@ -535,23 +535,70 @@ body {
 }
 
 .form_table th {
+    color:#333;
     text-align: right;
 }
-
+.form_div select,
+.form_controller select,
+.form_table select{
+    height: 55px;
+    line-height: 55px;
+    border: 1px solid #dadada;
+    padding:4px 6px;
+    font-size: 18px;
+}
+.form_controller input{
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid #dadada;
+    font-size: 16px;
+}
 .form_table input {
     height: 45px;
     line-height: 45px;
     border: 1px solid #dadada;
     width: 99%;
+    font-size: 16px;
 }
-
+.checkbox,
+ .radio{
+    margin-right: 20px;
+    color:#333;
+}
+.checkbox input,
+ .radio input{
+    width: auto;
+}
+.form_controller{
+    margin-bottom: 30px;
+}
+.form_controller h3,
+.form_controller p{
+    font-size: 18px;
+    line-height: 35px;
+    color:#333;
+    font-weight: normal;
+}
+.form_controller p{
+    font-weight: bold;
+}
+.form_div{
+    font-size: 18px;
+    height:60px;
+    line-height: 60px;
+    border-bottom:1px solid #dddddd;
+}
 .tab_content p {
     line-height: 20px;
     font-size: 14px;
     color: #333;
     margin: 5px 0 15px 0;
 }
-
+.redstar{
+    font-size: 22px;
+    color: #e00000;
+    margin-left: 5px;
+}
 .pre_icon {
     background: url(../img/ico_arrow.png) left no-repeat;
     padding-left: 15px;
@@ -719,4 +766,70 @@ body {
 }
 .indexBanner_num a.on, .indexBanner_num a:hover {
     background: #da2411;
+}
+.accordion_style03 .ui-accordion-content{
+    background: #eee;
+    padding:0 20px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+.accordion_style03 .ui-accordion-header{
+    background: #fff;
+    margin: 0;
+    border:1px solid #eee;
+    height:70px;
+    line-height: 70px;
+
+}
+.accordion_style03 .ui-accordion-header a{
+    font-size: 20px;
+    color: #333;
+    padding:0 0 0 20px;
+}
+.ui_link{
+    font-size: 20px;
+    color:#3399ff;
+}
+.ui_link:hover{
+    text-decoration: none;
+}
+.ui_link:link,
+.ui_link:visited{
+    text-decoration: underline;
+}
+
+.demo {
+    width: 685px;
+    height: 134px;
+    clear: both;
+    position: relative;
+}
+
+.bx_wrap ul li a:hover {
+    text-decoration: none;
+    color: #f30
+}
+
+.bx_wrap a.prev {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    outline-style: none;
+    outline-width: 0;
+    position: absolute;
+    top: 45px;
+    left: -20px;
+    text-indent: -999em;
+    background: url(../img/icon_arrow_left.png) no-repeat;
+}
+
+.bx_wrap a.next {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    right:-20px;
+    position: absolute;
+    top: 45px;
+    text-indent: -999em;
+    background: url(../img/icon_arrow_right.png) no-repeat;
 }

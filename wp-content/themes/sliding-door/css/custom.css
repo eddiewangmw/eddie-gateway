@@ -208,7 +208,7 @@ body {
 }
 
 .small_slide_mod {
-    padding: 30px 0 0 18px;
+    padding: 27px 0 0 18px;
 }
 
 .small_slide_mod a {
@@ -535,7 +535,24 @@ body {
 }
 
 .form_table th {
+	color:#333;
     text-align: right;
+}
+
+.form_div select,
+.form_controller select,
+.form_table select{
+    height: 55px;
+    line-height: 55px;
+    border: 1px solid #dadada;
+    padding:4px 6px;
+    font-size: 18px;
+}
+.form_controller input{
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid #dadada;
+    font-size: 16px;
 }
 
 .form_table input {
@@ -550,6 +567,41 @@ body {
     font-size: 14px;
     color: #333;
     margin: 5px 0 15px 0;
+}
+
+.checkbox,
+ .radio{
+    margin-right: 20px;
+    color:#333;
+}
+.checkbox input,
+ .radio input{
+    width: auto;
+}
+.form_controller{
+    margin-bottom: 30px;
+}
+.form_controller h3,
+.form_controller p{
+    font-size: 18px;
+    line-height: 35px;
+    color:#333;
+    font-weight: normal;
+}
+.form_controller p{
+    font-weight: bold;
+}
+.form_div{
+    font-size: 18px;
+    height:60px;
+    line-height: 60px;
+    border-bottom:1px solid #dddddd;
+}
+
+.redstar{
+    font-size: 22px;
+    color: #e00000;
+    margin-left: 5px;
 }
 
 .pre_icon {
@@ -721,3 +773,39 @@ body {
     background: #da2411;
 }
 .ui-accordion-content {color:#555;}
+
+.demo {
+    width: 685px;
+    height: 134px;
+    clear: both;
+    position: relative;
+}
+
+.bx_wrap ul li a:hover {
+    text-decoration: none;
+    color: #f30
+}
+
+.bx_wrap a.prev {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    outline-style: none;
+    outline-width: 0;
+    position: absolute;
+    top: 45px;
+    left: -20px;
+    text-indent: -999em;
+    background: url(../img/icon_arrow_left.png) no-repeat;
+}
+
+.bx_wrap a.next {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    right:-20px;
+    position: absolute;
+    top: 45px;
+    text-indent: -999em;
+    background: url(../img/icon_arrow_right.png) no-repeat;
+} 

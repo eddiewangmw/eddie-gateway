@@ -11,6 +11,9 @@
     <link href="assets/css/jquery.ui.tabs.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/jquery.ui.accordion.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+
+    </style>
 </head>
 
 <body>
@@ -107,37 +110,38 @@
 
 
             <div class="small_slide_mod" style="height:200px">
-
-                <div class="banner_index2">
-                    <a href="javascript:void(0);" class="btn btnPre" id="banner_index_pre"></a>
-                    <a href="javascript:void(0);" class="btn btnNext" id="banner_index_next"></a>
-                    <ul class="banner_wrap" id="banner_index2">
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="img"><img src="assets/img/small_slide_01.gif" alt=""></span>
-                                <span class="text">Certificate IV in  1<i class="ico_arrow"></i></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="img"><img src="assets/img/small_slide_01.gif" alt=""></span>
-                                <span class="text">Certificate IV in  2<i class="ico_arrow"></i></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="img"><img src="assets/img/small_slide_01.gif" alt=""></span>
-                                <span class="text">Certificate IV in  3<i class="ico_arrow"></i></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="img"><img src="assets/img/small_slide_01.gif" alt=""></span>
-                                <span class="text">Certificate IV in  4<i class="ico_arrow"></i></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+               <div class="demo">
+                    <div class="bx_wrap">
+                        <div class="bx_container">
+                            <ul class="" id="banner_index2">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span class="img"><img src="assets/img/small_slide_01.gif" alt=""></span>
+                                        <span class="text">Certificate IV in  1<i class="ico_arrow"></i></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span class="img"><img src="assets/img/small_slide_01.gif" alt=""></span>
+                                        <span class="text">Certificate IV in  2<i class="ico_arrow"></i></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span class="img"><img src="assets/img/small_slide_01.gif" alt=""></span>
+                                        <span class="text">Certificate IV in  3<i class="ico_arrow"></i></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span class="img"><img src="assets/img/small_slide_01.gif" alt=""></span>
+                                        <span class="text">Certificate IV in  4<i class="ico_arrow"></i></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+               </div>
 
             </div>
 
@@ -184,7 +188,7 @@
                     </div>
                     <div class="form_cotroller">
                         <label>Course</label>
-                        <select>
+                        <select style="width: 210px">
                             <option></option>
                             <option></option>
                         </select>
@@ -258,6 +262,7 @@
 <script type="text/javascript" src="lib/jquery.ui.tabs.min.js"></script>
 <script type="text/javascript" src="lib/jquery.ui.accordion.min.js"></script>
 <script type="text/javascript" src="lib/slide.js"></script>
+<script type="text/javascript" src="lib/bxCarousel.js"></script>
 <script type="text/javascript">
     var ShowPre1 = new ShowPre({
         box:"banner_index",
@@ -265,11 +270,9 @@
         loop:1,
         auto:1
     });
-    var ShowPre2 = new ShowPre({
-        box:"banner_index2",
-        Pre:"banner_index_pre",
-        Next:"banner_index_next",
-        loop:1
+    $('#banner_index2').bxCarousel({
+        display_num: 3,
+        move: 1
     });
 </script>
 

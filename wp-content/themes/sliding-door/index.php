@@ -52,6 +52,8 @@ get_header(); ?>
 
 	            <div class="row sub_title"></div>
 	            <div class="small_slide_mod" style="height:200px">
+					
+	               
 					<?php $scroll_posts = get_posts(array(
 						'post_type'		=> 'post',
 						'posts_per_page'	=> -1,
@@ -60,21 +62,24 @@ get_header(); ?>
 					));
 					?>
 					<?php if($scroll_posts):?>
-	                <div class="banner_index2">
-	                    <a href="javascript:void(0);" class="btn btnPre" id="banner_index_pre"></a>
-	                    <a href="javascript:void(0);" class="btn btnNext" id="banner_index_next"></a>
-	                    <ul class="banner_wrap" id="banner_index2">
-							<?php foreach($scroll_posts AS $post):?>
-	                        <li>
-	                            <a href="<?php echo get_permalink();?>">
-	                                <span class="img"><?php the_post_thumbnail(array(206,206));?></span>
-	                                <span class="text"><?php echo the_title();?><i class="ico_arrow"></i></span>
-	                            </a>
-	                        </li>
+		                <div class="demo">
+		                     <div class="bx_wrap">
+		                         <div class="bx_container">
+		                             <ul class="" id="banner_index2">
+											<?php foreach($scroll_posts AS $post):?>
+					                        <li>
+					                            <a href="<?php echo get_permalink();?>">
+					                                <span class="img"><?php the_post_thumbnail(array(206,206));?></span>
+					                                <span class="text"><?php echo the_title();?><i class="ico_arrow"></i></span>
+					                            </a>
+					                        </li>
 							
-						<?php endforeach;?>
-	                    </ul>
-	                </div>
+										<?php endforeach;?>
+		                                 
+		                             </ul>
+		                         </div>
+		                     </div>
+		                </div>
 				<?php endif;?>
 	            </div>
 

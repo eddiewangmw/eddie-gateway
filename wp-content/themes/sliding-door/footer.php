@@ -61,6 +61,7 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ui.accordion.min.js"></script>
 	<?php if(is_home()):?>
 		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/slide.js"></script>
+		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/bxCarousel.js"></script>
 		
 	<?php endif;?>
 	<script type="text/javascript">
@@ -118,12 +119,11 @@
 		        loop:1,
 		        auto:1
 		    });
-		    var ShowPre2 = new ShowPre({
-		        box:"banner_index2",
-		        Pre:"banner_index_pre",
-		        Next:"banner_index_next",
-		        loop:1
-		    });
+			$('#banner_index2').bxCarousel({
+			        display_num: 3,
+			        move: 1
+			    });
+		    
 			<?php endif;?>
 	    });
 	</script>
