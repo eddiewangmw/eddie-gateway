@@ -83,9 +83,9 @@
 
                     <div id="tabs-1">
 
-                        <div  class="ui-accordion ui-accordion-icons">
-                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Participant Eligibility</a></h3>
-                            <div class="ui-accordion-content" style="display: block">
+                        <div id="accordion" class="accordion_style04">
+                            <h3><a href="#">Participant Eligibility</a></h3>
+                            <div>
                                 <p>12312312311</p>
                                 <p class="ico_kuai">12312312311</p>
                                 <p class="ico_kuai">12312312311</p>
@@ -93,8 +93,9 @@
                                 <p class="ico_kuai">12312312311</p>
                                 <p class="ico_kuai">12312312311</p>
                             </div>
-                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Course Outcome</a></h3>
-                            <div class="ui-accordion-content" style="display: block">
+
+                            <h3><a href="#">Course Outcome</a></h3>
+                            <div>
                                 <p>12312312311</p>
                                 <p class="ico_kuai">12312312311</p>
                                 <p class="ico_kuai">12312312311</p>
@@ -102,8 +103,9 @@
                                 <p class="ico_kuai">12312312311</p>
                                 <p class="ico_kuai">12312312311</p>
                             </div>
-                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Course Cost</a></h3>
-                            <div class="ui-accordion-content" style="display: block">
+
+                            <h3><a href="#">Course Cost</a></h3>
+                            <div>
                                 <p>12312312311</p>
                                 <p class="ico_kuai">12312312311</p>
                                 <p class="ico_kuai">12312312311</p>
@@ -113,14 +115,14 @@
                             </div>
                         </div>
 
-
                     </div>
+
 
                     <div id="tabs-2">
 
-                        <div  class="ui-accordion ui-accordion-icons">
-                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Core Units</a></h3>
-                            <div class="ui-accordion-content" style="display: block">
+                        <div id="accordion3" class="accordion_style04">
+                            <h3><a href="#">Core Units</a></h3>
+                            <div>
                                 <table class="ui_table">
                                     <tr>
                                         <th width="100">Occupation</th>
@@ -140,9 +142,12 @@
                                     </tr>
                                 </table>
                             </div>
-                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Course Outcome</a></h3>
-                            <div class="ui-accordion-content" style="display: block">
+
+                            <h3><a href="#">Course Outcome</a></h3>
+                            <div>
                                 <p>12312312311</p>
+                                <p class="ico_kuai">12312312311</p>
+                                <p class="ico_kuai">12312312311</p>
                                 <p class="ico_kuai">12312312311</p>
                                 <p class="ico_kuai">12312312311</p>
                                 <p class="ico_kuai">12312312311</p>
@@ -313,8 +318,13 @@
     $(function() {
 
         $( "#tabs" ).tabs();
+        $( "#accordion3" ).accordion({
+        });
+        $( "#accordion" ).accordion({
+        });
         $( "#accordion2" ).accordion({
         });
+        jQuery('#accordion3 div').css('height','auto');
     });
 </script>
 </body>

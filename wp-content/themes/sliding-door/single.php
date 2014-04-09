@@ -34,17 +34,17 @@ get_header(); ?>
 
                     <div id="tabs-1">
 
-                        <div  class="ui-accordion ui-accordion-icons">
-                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Participant Eligibility</a></h3>
-                            <div class="ui-accordion-content" style="display: block">
+						<div id="accordion" class="accordion_style04">
+                            <h3><a href="#">Participant Eligibility</a></h3>
+                            <div>
                                 <?php the_field('course_detail_part_1')?>
                             </div>
-                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Course Outcome</a></h3>
-                            <div class="ui-accordion-content" style="display: block">
+							<h3><a href="#">Course Outcome</a></h3>
+							<div>
                                 <?php the_field('course_detail_part_2')?>
                             </div>
-                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Course Cost</a></h3>
-                            <div class="ui-accordion-content" style="display: block">
+						    <h3><a href="#">Course Cost</a></h3>
+						    <div>
                                 <?php the_field('course_detail_part_3')?>
                             </div>
                         </div>
@@ -54,12 +54,12 @@ get_header(); ?>
 
                     <div id="tabs-2">
 
-                        <div  class="ui-accordion ui-accordion-icons">
-                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Core Units</a></h3>
-                            <div class="ui-accordion-content" style="display: block">
+						<div id="accordion3" class="accordion_style04">
+                            <h3><a href="#">Core Units</a></h3>
+                            <div>
                               <?php the_field('course_units')?>
                             </div>
-                            <h3 class="ui-accordion-header"><span class="ui-icon"></span><a href="#">Course Outcome</a></h3>
+                            <h3><a href="#">Course Outcome</a></h3>
                             <div class="ui-accordion-content" style="display: block">
                                <?php the_field('course_outcome')?>
                             </div>

@@ -52,7 +52,7 @@
             <div class="menu">
                 <ul>
                     <li <?php echo is_home() ? 'class="active"' : "";?>><a href="<?php echo home_url('/');?>">Home</a></li>
-                    <li <?php echo is_page(10) ? 'class="active"' : "";?>><a href="<?php echo home_url('/categories');?>">Courses</a></li>
+                    <li <?php echo (is_page(10) OR is_single() OR is_category()) ? 'class="active"' : "";?>><a href="<?php echo home_url('/categories');?>">Courses</a></li>
                     <li><a href="calendar.html">Calendar</a></li>
                     <li><a href="javascript:void(0)">Traineeships</a></li>
                     <li><a href="javascript:void(0)">Certificate lll Guarantee</a></li>

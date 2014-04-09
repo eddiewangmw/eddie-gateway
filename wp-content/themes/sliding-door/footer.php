@@ -70,7 +70,13 @@
 			<?php if(is_single()): ?>
 			
 	        $( "#tabs" ).tabs();
-	        $( "#accordion2" ).accordion({});
+		    $( "#accordion3" ).accordion({
+           });
+           $( "#accordion" ).accordion({
+           });
+           $( "#accordion2" ).accordion({
+           });
+           jQuery('#accordion3 div').css('height','auto');
 			
 			<?php endif;?>
 			
