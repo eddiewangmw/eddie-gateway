@@ -32,7 +32,7 @@ get_header(); ?>
 	    <div class="link_mod row mb10">
 			<?php $posts = get_posts(array(
 				'post_type'		=> 'post',
-				'posts_per_page'	=> -1,
+				'posts_per_page'	=> 4,
 				'meta_key'		=> 'recommend_in_home_page',
 				'meta_value'		=> 1
 			));
