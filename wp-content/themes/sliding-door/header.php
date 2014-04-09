@@ -13,7 +13,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>gateway</title>
+    <title>Gateway</title>
     <link href="<?php echo get_template_directory_uri(); ?>/css/ui_base.css" rel="stylesheet" type="text/css"/>
     <link href="<?php echo get_template_directory_uri(); ?>/css/ui_layout.css" rel="stylesheet" type="text/css"/>
     <link href="<?php echo get_template_directory_uri(); ?>/css/ui_function.css" rel="stylesheet" type="text/css"/>
@@ -53,7 +53,7 @@
                 <ul>
                     <li <?php echo is_home() ? 'class="active"' : "";?>><a href="<?php echo home_url('/');?>">Home</a></li>
                     <li <?php echo (is_page(10) OR is_single() OR is_category()) ? 'class="active"' : "";?>><a href="<?php echo home_url('/categories');?>">Courses</a></li>
-                    <li><a href="calendar.html">Calendar</a></li>
+                    <li <?php echo is_page('calendar') ? 'class="active"' : "";?>><a href="<?php echo home_url('/calendar');?>">Calendar</a></li>
                     <li><a href="javascript:void(0)">Traineeships</a></li>
                     <li><a href="javascript:void(0)">Certificate lll Guarantee</a></li>
                 </ul>

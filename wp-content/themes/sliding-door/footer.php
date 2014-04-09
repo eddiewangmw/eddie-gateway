@@ -53,12 +53,13 @@
 
 
 	</div>
-	
+	<?php if( !is_page('calendar')):?>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ui.core.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ui.widget.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ui.tabs.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ui.accordion.min.js"></script>
+<?php endif;?>
 	<?php if(is_home()):?>
 		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/slide.js"></script>
 		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/bxCarousel.js"></script>
@@ -86,6 +87,12 @@
 		          $( "#accordion2" ).accordion({
 		          });
 			
+			<?php endif;?>
+			
+			<?php if(is_home() OR is_page('calendar')):?>
+			$("#search .btn_search").click(function(){
+				$("#search").submit();
+			});
 			<?php endif;?>
 			
 			<?php if(is_home()):?>
@@ -116,9 +123,7 @@
 					  });
 				}
 			});
-			$("#search .btn_search").click(function(){
-				$("#search").submit();
-			});
+			
 		    var ShowPre1 = new ShowPre({
 		        box:"banner_index",
 		        numIco:"index_numIco",
