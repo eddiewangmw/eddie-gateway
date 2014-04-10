@@ -41,7 +41,7 @@ get_header(); ?>
 	        <div class="grid_6">
 	            <a class="link active" href="<?php echo get_permalink();?>">
 	                <span class="img"><?php the_post_thumbnail(array(240,197));?></span>
-	                <span class="text"><?php echo the_title();?><i class="ico_arrow"></i></span>
+	                <span class="text"><b><?php echo the_title();?></b><i class="ico_arrow"></i></span>
 	            </a>
 	        </div>
 		<?php endforeach;?>
@@ -70,7 +70,7 @@ get_header(); ?>
 					                        <li>
 					                            <a href="<?php echo get_permalink();?>">
 					                                <span class="img"><?php the_post_thumbnail(array(206,206));?></span>
-					                                <span class="text"><?php echo the_title();?><i class="ico_arrow"></i></span>
+					                                <span class="text"><b><?php echo the_title();?></b><i class="ico_arrow"></i></span>
 					                            </a>
 					                        </li>
 							

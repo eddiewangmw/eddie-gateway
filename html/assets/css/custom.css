@@ -135,6 +135,9 @@ body {
     background: #999;
     color: #fff;
 }
+.link:hover .text b{
+    color: #fff;
+}
 
 .link .text {
     position: relative;
@@ -142,12 +145,20 @@ body {
     height: 65px;
     line-height: 65px;
     background: #fff;
-    color: #2c2c2c;
-    font-size: 16px;
     font-weight: bold;
     padding-left: 10px;
+    color: #2c2c2c;
+    font-size: 16px;
 }
-
+.link .text b{
+    display: block;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #2c2c2c;
+    font-size: 16px;
+}
 .link .text .ico_arrow {
     position: absolute;
     top: 25px;
@@ -636,6 +647,7 @@ body {
 }
 
 .course_detail_mod h3 a {
+    display: block;
     font-size: 14px;
     color: #333;
     background: url(../img/ico_arrow.png) left no-repeat;
