@@ -29,9 +29,10 @@ get_header(); ?>
 								</div>
 				<?php endif; ?>
 				<?php if ( have_posts() ) : ?>
+				<?php $i=1;?>
 				<?php while ( have_posts() ) : the_post(); ?>
 				<div class="search-item">
-					<div class="num">1</div>
+					<div class="num"><?php echo $i;?></div>
 					<div class="content">
 						<p><?php the_title(); ?></p>
 						<p>
@@ -42,6 +43,7 @@ get_header(); ?>
 						</p>
 					</div>
 				</div>
+			<?php $i++;?>
 			<?php endwhile;?>
 				<?php endif; ?>
 		    </div>
