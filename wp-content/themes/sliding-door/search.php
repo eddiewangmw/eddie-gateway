@@ -7,29 +7,48 @@
  */
 
 get_header(); ?>
-
-		<div id="container">
-			<div id="content" role="main">
-
-<?php if ( have_posts() ) : ?>
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'slidingdoor' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				<?php
-				/* Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called loop-search.php and that will be used instead.
-				 */
-				 get_template_part( 'loop', 'search' );
-				?>
-<?php else : ?>
-				<div id="post-0" class="post no-results not-found">
-					<h2 class="entry-title"><?php _e( 'Nothing Found', 'slidingdoor' ); ?></h2>
-					<div class="entry-content">
-						<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'slidingdoor' ); ?></p>
-						<?php get_search_form(); ?>
-					</div><!-- .entry-content -->
-				</div><!-- #post-0 -->
-<?php endif; ?>
-			</div><!-- #content -->
-		</div><!-- #container -->
+    <div class="banner_mod row">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/search-banner.png" alt="" height="162">
+    </div>
+    <div class="content_mod row mb10">
+        <div class="p15">
+		    <div class="row mb10">
+				<div style="height:100px;">
+		        <form action="" class="main_search search_result" id="search">
+		            <input type="text" placeholder="<?php echo get_search_query();?>" name="s" style="border-top: solid 1px #555;border-left: solid 1px #555;border-bottom: solid 1px #555;">
+		            <a href="javascript:void(0)" class="btn_search " style="border-top: solid 1px #555;border-right: solid 1px #555;border-bottom: solid 1px #555;"></a>
+		        </form>
+				</div>
+				<?php if ( have_posts() ) : ?>
+								<div class="search-header">
+									Your search for "<?php echo get_search_query();?>" returened <?php echo $wp_query->post_count;?> results.
+								</div>
+				<?php else : ?>
+								<div class="search-header">
+									Your search for "<?php echo get_search_query();?>" returened 0 results.
+								</div>
+				<?php endif; ?>
+				<?php if ( have_posts() ) : ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+				<div class="search-item">
+					<div class="num">1</div>
+					<div class="content">
+						<p><?php the_title(); ?></p>
+						<p>
+							<?php dynamic_excerpt(200); ?>
+						</p>
+						<p class="link">
+							<a href="<?php the_permalink(); ?>" class="btn_red btn-link"><span>Go to the link</span></a>
+						</p>
+					</div>
+				</div>
+			<?php endwhile;?>
+				<?php endif; ?>
+		    </div>
+            <div class="left mb30">
+				
+			</div>
+		</div>
+	</div>
 
 <?php get_footer(); ?>

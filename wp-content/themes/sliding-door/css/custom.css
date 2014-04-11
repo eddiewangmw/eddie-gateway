@@ -840,3 +840,30 @@ body {
 	z-index:9999;
     background: url(../img/icon_arrow_right.png) no-repeat;
 } 
+
+.search-header{
+	border-top: 1px solid #a6a6a6;
+	border-bottom: 1px solid #a6a6a6;
+	padding: 18px 0;
+	font-size: 18px;
+}
+.search-item .num{
+	float: left;
+	width: 30px;
+	font-size: 18px;
+}
+.search-item{
+	clear: both;
+	border-bottom: 1px solid #a6a6a6;
+	padding: 20px 0;
+	float: left;
+	width: 100%;
+	color:#a6a6a6;
+}
+.search-item .content{float: left;width:80%;}
+.btn-link{
+	margin-top: 15px;
+	padding: 6px 10px;
+	font-weight: normal;
+	font-size: 15px;
+}
