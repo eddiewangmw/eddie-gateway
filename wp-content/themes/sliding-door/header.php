@@ -21,6 +21,7 @@
     <link href="<?php echo get_template_directory_uri(); ?>/css/jquery.ui.tabs.css" rel="stylesheet" type="text/css"/>
     <link href="<?php echo get_template_directory_uri(); ?>/css/jquery.ui.accordion.css" rel="stylesheet" type="text/css"/>
     <link href="<?php echo get_template_directory_uri(); ?>/css/custom.css" rel="stylesheet" type="text/css"/>
+	<?php wp_head();?>
 </head>
 <body>
 <div class="body_bg2"></div>

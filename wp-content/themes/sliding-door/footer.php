@@ -146,5 +146,6 @@
 	      echo "</pre>";
 	  }
 	?>
+	<?php wp_footer();?>
 	</body>
 	</html>
