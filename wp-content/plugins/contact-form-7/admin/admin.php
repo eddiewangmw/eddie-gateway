@@ -157,8 +157,17 @@ function wpcf7_load_contact_form_admin() {
 	}
 
 	if( 'download' == $action ){
-	    require_once(dirname(__FILE__).'/../html2pdf/html2pdf.class.php');
+		$post = $_GET['post'];
+		if ( ! class_exists( 'WPCF7_Form' ) )
+			require_once WPCF7_PLUGIN_DIR . '/includes/classes.php';
 
+		if( !$post = new WPCF7_Form($post) ){
+			wp_safe_redirect( 'admin.php?page=wpcf7-show');
+			exit;
+		}
+		// var_dump($post->courese,unserialize(htmlspecialchars_decode($post->courese)));exit;
+		require_once(dirname(__FILE__).'/../html2pdf/html2pdf.class.php');
+		
 	    // get the HTML
 	     ob_start();
 	     include(dirname(__FILE__).'/../html2pdf/templates/form.php');

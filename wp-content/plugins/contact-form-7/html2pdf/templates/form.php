@@ -7,235 +7,243 @@
     ul.main li { padding-bottom: 2mm; }
     h1 { text-align: center; font-size: 20mm}
     h3 { text-align: center; font-size: 14mm}
+	table .content{width:100%;}
+	td .title{font-size: 16pt ; font-weight: normal; color:#000000;height: 35px; width:100%;}
+	.value{font-size: 16pt ; font-weight: bold; color:#999999; height:30px;padding-left:10px;}
+	td .tw{width:20%;}
+	td .three{width:30%;}
+	td .sub{padding-left:25px;}
+	
 -->
 </style>
 <page backtop="14mm" backbottom="14mm" backleft="10mm" backright="10mm" style="font-size: 12pt">
-    <page_header>
-        <table class="page_header">
-            <tr>
-                <td style="width: 50%; text-align: left">
-                    A propos de ...
-                </td>
-                <td style="width: 50%; text-align: right">
-                    HTML2PDF v<?php echo __CLASS_HTML2PDF__; ?>
-                </td>
-            </tr>
-        </table>
-    </page_header>
     <page_footer>
         <table class="page_footer">
             <tr>
                 <td style="width: 33%; text-align: left;">
-                    http://html2pdf.fr/
+					http://www.gatewayacademy.com.au/
                 </td>
                 <td style="width: 34%; text-align: center">
                     page [[page_cu]]/[[page_nb]]
                 </td>
                 <td style="width: 33%; text-align: right">
-                    &copy;Spipu 2008-2011
+                    &copy;Gateway Training Academy 2008-2014
                 </td>
             </tr>
         </table>
     </page_footer>
-    <bookmark title="Présentation" level="0" ></bookmark>
+    <bookmark title="Presentation" level="0" ></bookmark>
     <br><br><br><br><br><br><br><br>
-    <h1>HTML2PDF</h1>
-    <h3>v<?php echo __CLASS_HTML2PDF__; ?></h3><br>
+    <h1>CERTIFICATE III GUARANTEE ENROLMENT FORM</h1>
+    <br>
     <br><br><br><br><br>
     <div style="text-align: center; width: 100%;">
         <br>
-        <img src="./res/logo.png" alt="Logo HTML2PDF" style="width: 150mm">
+        <img src="<?php echo wpcf7_plugin_url('html2pdf/templates/imgs/logo.png');?>" alt="Logo HTML2PDF" style="width: 150mm">
         <br>
     </div>
     <br><br><br><br><br>
-    <div class="note">
-        HTML2PDF est un convertisseur de code HTML vers PDF écrit en PHP5, utilisant la librairie <a href="http://tcpdf.org">TCPDF.</a><br>
-        <br>
-        Il permet la conversion d'HTML et d'xHTML valide au format PDF, et est distribué sous licence LGPL.<br>
-        <br>
-        Cette librairie a été conçue pour gérer principalement les TABLE imbriquées afin de générer des factures, bon de livraison, et autres documents officiels.<br>
-        <br>
-        Vous pouvez télécharger la dernière version de HTML2PDF ici : <a href="http://html2pdf.fr/">http://html2pdf.fr/</a>.<br>
-    </div>
+    
 </page>
 <page pageset="old">
-    <bookmark title="Sommaire" level="0" ></bookmark>
+    <bookmark title="Index" level="0" ></bookmark>
     <!-- here will be the automatic index -->
 </page>
 <page pageset="old">
-    <bookmark title="Compatibilité" level="0" ></bookmark>
-    <bookmark title="Balises HTML" level="1" ></bookmark>
-    <bookmark title="Balises classiques" level="2" ></bookmark>
+    <bookmark title="Studen Detail" level="0" ></bookmark>
     <div class="note">
-        La liste des balises HTML utilisables est la suivante :<br>
+        Student Detail<br>
     </div>
     <br>
-    <ul class="main">
-        <li>&lt;a&gt; : Ceci est un lien vers <a href="http://html2pdf.fr">le site de HTML2PDF</a></li>
-        <li>&lt;b&gt;, &lt;strong&gt; : Ecrire en <b>gras</b>.</li>
-        <li>&lt;big&gt; : Ecrire plus <big>gros</big>.</li>
-        <li>&lt;br&gt; : Permet d'aller à la ligne</li>
-        <li>&lt;cite&gt; : <cite>Ceci est une citation</cite></li>
-        <li>&lt;code&gt;, &lt;pre&gt;</li>
-        <li>&lt;div&gt; :&nbsp;<div style="border: solid 1px #AADDAA; background: #DDFFDD; text-align: center; width: 50mm">exemple de DIV</div></li>
-        <li>&lt;em&gt;, &lt;i&gt;, &lt;samp&gt; : Ecrire en <em>italique</em>.</li>
-        <li>&lt;font&gt;, &lt;span&gt; : <font style="color: #000066; font-family: times">Exemple d'utilisation</font></li>
-        <li>&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;</li>
-        <li>&lt;hr&gt; : barre horizontale</li>
-        <li>&lt;img&gt; : <img src="./res/tcpdf_logo.jpg" style="width: 10mm"></li>
-        <li>&lt;p&gt; : Ecrire dans un paragraphe</li>
-        <li>&lt;s&gt; : Texte <s>barré</s></li>
-        <li>&lt;small&gt; : Ecrire plus <small>petit</small>.</li>
-        <li>&lt;style&gt;</li>
-        <li>&lt;sup&gt; : Exemple<sup>haut</sup>.</li>
-        <li>&lt;sub&gt; : Exemple<sub>bas</sub>.</li>
-        <li>&lt;u&gt; : Texte <u>souligné</u></li>
-        <li>&lt;table&gt;, &lt;td&gt;, &lt;th&gt;, &lt;tr&gt;, &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;, &lt;col&gt; </li>
-        <li>&lt;ol&gt;, &lt;ul&gt;, &lt;li&gt;</li>
-        <li>&lt;form&gt;, &lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;, &lt;option&gt;</li>
-        <li>&lt;fieldset&gt;, &lt;legend&gt;</li>
-        <li>&lt;del&gt;, &lt;ins&gt;</li>
-        <li>&lt;draw&gt;, &lt;line&gt;, &lt;rect&gt;, &lt;circle&gt;, &lt;ellipse&gt;, &lt;polygone&gt;, &lt;polyline&gt;, &lt;path&gt;</li>
-    </ul>
-    <bookmark title="Balises spécifiques" level="2" ></bookmark>
-    <div class="note">
-        Les balises spécifiques suivantes ont été ajoutées :<br>
-    </div>
-    <br>
-    <ul class="main" >
-        <li>&lt;page&gt;</li>
-        <li>&lt;page_header&gt;</li>
-        <li>&lt;page_footer&gt;</li>
-        <li>&lt;nobreak&gt;</li>
-        <li>&lt;barcode&gt;</li>
-        <li>&lt;bookmark&gt;</li>
-        <li>&lt;qrcode&gt;</li>
-    </ul>
-</page>
-<page pageset="old">
-    <bookmark title="Styles CSS" level="1" ></bookmark>
-    <div class="note">
-        La liste des styles CSS utilisables est la suivante :<br>
-    </div>
-    <br>
-    <table style="width: 100%">
-        <tr style="vertical-align: top">
-            <td style="width: 50%">
-                <ul class="main">
-                    <li>color</li>
-                    <li>font-family</li>
-                    <li>font-weight</li>
-                    <li>font-style</li>
-                    <li>font-size</li>
-                    <li>text-decoration</li>
-                    <li>text-indent</li>
-                    <li>text-align</li>
-                    <li>text-transform</li>
-                    <li>vertical-align</li>
-                    <li>width</li>
-                    <li>height</li>
-                    <li>line-height</li>
-                    <li>padding</li>
-                    <li>padding-top</li>
-                    <li>padding-right</li>
-                    <li>padding-bottom</li>
-                    <li>padding-left</li>
-                    <li>margin</li>
-                    <li>margin-top</li>
-                    <li>margin-right</li>
-                    <li>margin-bottom</li>
-                    <li>margin-left</li>
-                    <li>position</li>
-                    <li>top</li>
-                    <li>bottom</li>
-                    <li>left</li>
-                    <li>right</li>
-                    <li>float</li>
-                    <li>rotate</li>
-                    <li>background</li>
-                    <li>background-color</li>
-                    <li>background-image</li>
-                    <li>background-position</li>
-                    <li>background-repeat</li>
-                </ul>
-            </td>
-            <td style="width: 50%">
-                <ul class="main">
-                    <li>border</li>
-                    <li>border-style</li>
-                    <li>border-color</li>
-                    <li>border-width</li>
-                    <li>border-collapse</li>
-                    <li>border-top</li>
-                    <li>border-top-style</li>
-                    <li>border-top-color</li>
-                    <li>border-top-width</li>
-                    <li>border-right</li>
-                    <li>border-right-style</li>
-                    <li>border-right-color</li>
-                    <li>border-right-width</li>
-                    <li>border-bottom</li>
-                    <li>border-bottom-style</li>
-                    <li>border-bottom-color</li>
-                    <li>border-bottom-width</li>
-                    <li>border-left</li>
-                    <li>border-left-style</li>
-                    <li>border-left-color</li>
-                    <li>border-left-width</li>
-                    <li>border-radius</li>
-                    <li>border-top-left-radius</li>
-                    <li>border-top-right-radius</li>
-                    <li>border-bottom-left-radius</li>
-                    <li>border-bottom-right-radius</li>
-                    <li>list-style</li>
-                    <li>list-style-type</li>
-                    <li>list-style-image</li>
-                </ul>
-            </td>
+    <table class="content">
+        <tr>
+            <td class="title"><span class="title">1. Student Type </span></td>          
+			<td class="value"><i><?php $name = 'student-type'; echo isset($post->{$name}) ? $post->{$name} : '';?></i></td>          
         </tr>
+		<?php $courese = '';
+
+		if( isset($post->courese) AND $post->courese){
+			$courses = implode(',',unserialize(htmlspecialchars_decode($post->courese)));
+		}
+		?>
+        <tr>
+            <td class="title"><div class="title">2. I em enrolling to </div></td>          
+			<td class="value"><div class="value"><i><?php echo $courses;?></i></div></td>          
+        </tr>
+        <tr>
+           <td class="title"><div class="title">3. Do you have interenet accesso <br>  <div class="sub">be learn online? </div></div></td>          
+			<td class="value"><div class="value"><i><?php $name = 'internet-access';echo isset($post->{$name}) ? $post->{$name} : '';?></i></div></td>          
+        </tr>
+        <tr>
+            <td class="title"><div class="title">4. Student Details </div></td>          
+			<td class="value"></td>          
+        </tr>
+      	<tr>
+          	<td class="title"><div class="title sub">Gender</div></td>          
+			<td class="value"><i><?php echo isset($post->gender) ? $post->gender : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">First Name</div></td>          
+			<td class="value"><i><?php echo isset($post->fsname) ? $post->fsname : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">Last Name</div></td>          
+			<td class="value"><i><?php echo isset($post->lsname) ? $post->lsname : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">Date of Birth</div></td>          
+			<td class="value"><i><?php echo isset($post->birth) ? $post->birth : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">Home Phone</div></td>          
+			<td class="value"><i><?php echo isset($post->hphone) ? $post->hphone : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">Mobile Phone</div></td>          
+			<td class="value"><i><?php echo isset($post->mphone) ? $post->mphone : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">Address</div></td>          
+			<td class="value"><i><?php echo isset($post->address) ? $post->address : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">Suburb</div></td>          
+			<td class="value"><i><?php echo isset($post->suburb) ? $post->suburb : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">State</div></td>          
+			<td class="value"><i><?php echo isset($post->state) ? $post->state : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">Pcode</div></td>          
+			<td class="value"><i><?php echo isset($post->pcode) ? $post->pcode : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">Email</div></td>          
+			<td class="value"><i><?php echo isset($post->email) ? $post->email : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">Employer Name</div></td>          
+			<td class="value"><i><?php echo isset($post->employername) ? $post->employername : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">Host Employer</div></td>          
+			<td class="value"><i><?php echo isset($post->hem) ? $post->hem : '';?></i></td>          
+		</tr>
     </table>
 </page>
 <page pageset="old">
-    <bookmark title="Propriétés" level="1" ></bookmark>
+    <bookmark title="Emergency Contact Details" level="0" ></bookmark>
     <div class="note">
-        La liste des propriétés utilisables est la suivante :<br>
+        Emergency Contact Details<br>
     </div>
     <br>
-    <table style="width: 100%">
-        <tr style="vertical-align: top">
-            <td style="width: 50%">
-                <ul class="main">
-                    <li>cellpadding</li>
-                    <li>cellspacing</li>
-                    <li>colspan</li>
-                    <li>rowspan</li>
-                    <li>width</li>
-                    <li>height</li>
-                </ul>
-            </td>
-            <td style="width: 50%">
-                <ul class="main">
-                    <li>align</li>
-                    <li>valign</li>
-                    <li>bgcolor</li>
-                    <li>bordercolor</li>
-                    <li>border</li>
-                    <li>type</li>
-                    <li>value</li>
-                </ul>
-            </td>
-        </tr>
+    <table class="content">
+      	<tr>
+          	<td class="title"><div class="title sub">1. Name </div></td>          
+			<td class="value"><i><?php echo isset($post->ename) ? $post->ename : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">2. Relationship</div></td>          
+			<td class="value"><i><?php echo isset($post->relationship) ? $post->relationship : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">3. Full Address</div></td>          
+			<td class="value"><i><?php echo isset($post->eaddress) ? $post->eaddress : '';?></i></td>          
+		</tr>
+      	<tr>
+          	<td class="title"><div class="title sub">4. Phone Number</div></td>          
+			<td class="value"><i><?php echo isset($post->ephone) ? $post->ephone : '';?></i></td>          
+		</tr>
     </table>
-    <bookmark title="Limitations" level="0" ></bookmark>
+</page>
+<page pageset="old">
+    <bookmark title="AVETMISS" level="0" ></bookmark>
     <div class="note">
-        Cette librairie comporte des limitations :<br>
+        Australian Vocational Education and Training Management Information Statistical Standart Form
     </div>
     <br>
-    <ul class="main">
-        <li>Les float ne sont gérés que pour la balise IMG.</li>
-        <li>Elle ne permet généralement pas la conversion directe d'une page HTML en PDF, ni la conversion du résultat d'un WYSIWYG en PDF.</li>
-        <li>Cette librairie est là pour faciliter la génération de documents PDF, pas pour convertir n'importe quelle page HTML.</li>
-        <li>Les formulaires ne marchent pas avec tous les viewers PDFs...</li>
-        <li>Lisez bien le wiki : <a href="http://wiki.spipu.net/doku.php?id=html2pdf:Accueil">http://wiki.spipu.net/doku.php?id=html2pdf:Accueil</a>.</li>
-    </ul>
+    <table class="content">
+        <tr>
+            <td style="width:100%;"><div class="title">1. Is this first time you have enrolled at this entre? </div></td>          
+        </tr>
+        <tr>
+			<td style="width:100%;"><div class="value"><i><?php echo isset($post->firsttime) ? $post->firsttime : '';?></i></div></td>          
+        </tr>
+        <tr>
+            <td style="width:100%;"><div class="title">2. If YES, then state the month & year your study will begin.(i.e July 2010)? </div></td>          
+        </tr>
+        <tr>
+			<td style="width:100%;"><div class="value"><i><?php $name = 'info-begin';echo isset($post->{$name}) ? $post->{$name} : '';?></i></div></td>          
+        </tr>
+        <tr>
+            <td style="width:50%;"><div class="title">3. Which country where you born in?</div></td>          
+			<td style="width:50%;"><div class="title">What other languages can you speak?</div></td>          
+        </tr>
+        <tr>
+            <td style="width:50%;"><div class="value"><i><?php $name = 'info-country';echo isset($post->{$name}) ? $post->{$name} : '';?></i></div></td>          
+            <td style="width:50%;"><div class="value"><i><?php $name = 'info-lang';echo isset($post->{$name}) ? $post->{$name} : '';?></i></div></td>          
+        </tr>
+       <tr>
+           <td style="width:100%;"><div class="title">4. How well do you speak English? </div></td>          
+        </tr>
+        <tr>
+			<td style="width:100%;"><div class="value"><i><?php $name = 'info-english'; echo isset($post->{$name}) ? $post->{$name} : '';?></i></div></td>          
+        </tr>
+        <tr>
+            <td style="width:100%;"><div class="title">5. Are you Aboriginal Or Torres Strait Islander origin? </div></td>          
+         </tr>
+         <tr>
+ 			<td style="width:100%;"><div class="value"><i><?php $name = 'info-aboriginal'; echo isset($post->{$name}) ? $post->{$name} : '';?></i></div></td>          
+         </tr>
+         <tr>
+             <td style="width:100%;"><div class="title">6. Do you consider yourself to have a disability, Impairment or long term condition? </div></td>          
+          </tr>
+          <tr>
+  			<td style="width:100%;">
+				<div class="value"><i>
+					<?php $name = 'info-condition'; echo isset($post->{$name}) ? $post->{$name} : '';?>
+				</i></div>
+				<div class="value"><i>
+					<?php $name = 'info-condition-option'; echo isset($post->{$name}) ? $post->{$name} : '';?>
+					<?php $name = 'info-condition-other'; echo isset($post->{$name}) ? $post->{$name} : '';?>
+				</i></div></td>          
+          </tr>
+          <tr>
+              <td style="width:100%;"><div class="title">7. What is your highest level of education? </div></td>          
+           </tr>
+           <tr>
+   			<td style="width:100%;"><div class="value"><i><?php $name = 'info-edu'; echo isset($post->{$name}) ? $post->{$name} : '';?></i></div></td>          
+           </tr>
+	       <tr>
+	           <td style="width:40%;"><div class="title">In which year did you complete school?</div></td>          
+	       </tr>
+           <tr>
+   			<td style="width:100%;"><div class="value"><i><?php $name = 'info-edu-year'; echo isset($post->{$name}) ? $post->{$name} : '';?></i></div></td>          
+           </tr>
+           <tr>
+               <td style="width:100%;"><div class="title">8. Are you still in Secondary School?(High School) </div></td>          
+            </tr>
+            <tr>
+    			<td style="width:100%;"><div class="value"><i><?php $name = 'info-inshcool'; echo isset($post->{$name}) ? $post->{$name} : '';?></i></div></td>          
+            </tr>
+            <tr>
+                <td style="width:100%;"><div class="title">9. Have you successfully completed any of the following quelification eigher here in Australia or Overseas? </div></td>          
+             </tr>
+             <tr>
+     			<td style="width:100%;"><div class="value"><i><?php $name = 'info-9'; echo isset($post->{$name}) ? $post->{$name} : '';?></i></div></td>          
+             </tr>
+             <tr>
+                 <td style="width:100%;"><div class="title">10. Of the following categories, which BEST describes your current employment status?</div></td>          
+              </tr>
+              <tr>
+      			<td style="width:100%;"><div class="value"><i><?php $name = 'info-10'; echo isset($post->{$name}) ? $post->{$name} : '';?></i></div></td>          
+              </tr>
+              <tr>
+                  <td style="width:100%;"><div class="title">11. What was your main reason for study?</div></td>          
+               </tr>
+               <tr>
+       			<td style="width:100%;"><div class="value"><i><?php $name = 'info-11'; echo isset($post->{$name}) ? $post->{$name} : '';?></i></div></td>          
+               </tr>
+			   </table>
 </page>

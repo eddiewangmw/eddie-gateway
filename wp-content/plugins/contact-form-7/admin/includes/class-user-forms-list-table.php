@@ -36,7 +36,7 @@ class WPCF7_User_Form_List_Table extends WP_List_Table {
 		$args = array(
 			'posts_per_page' => $per_page,
 			'orderby' => 'created_on',
-			'order' => 'ASC',
+			'order' => 'DESC',
 			'offset' => ( $this->get_pagenum() - 1 ) * $per_page );
 
 		if ( ! empty( $_REQUEST['s'] ) )
@@ -110,7 +110,7 @@ class WPCF7_User_Form_List_Table extends WP_List_Table {
 	function column_username($item){
 		$url = admin_url( 'admin.php?page=wpcf7-show&post=' . absint( $item->id ) );
 		$download_link = add_query_arg( array( 'action' => 'download' ), $url );
-		$view_link = add_query_arg(array('action'=>'view'), $url);
+		$view_link = add_query_arg(array('action'=>'download'), $url);
 		
 		$actions = array(
 			'Download' => '<a href="' . $download_link . '">' . __( 'Download', 'contact-form-7' ) . '</a>' );

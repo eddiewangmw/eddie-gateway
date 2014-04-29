@@ -48,7 +48,7 @@ class WPCF7_Form{
 			'state',
 			'pcode',
 			'email',
-			'emphone',
+			'employername',
 			'hem',
 			'ename',
 			'relationship',
@@ -90,6 +90,7 @@ class WPCF7_Form{
 					$this->{$prop} = get_post_meta( $post->ID, $prop, true );
 			}
 		}
+		// return $this;
 	}
 }
 
@@ -632,7 +633,7 @@ class WPCF7_ContactForm {
 			'state',
 			'pcode',
 			'email',
-			'emphone',
+			'employername',
 			'hem',
 			'ename',
 			'relationship',
